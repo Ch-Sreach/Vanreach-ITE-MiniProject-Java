@@ -20,7 +20,7 @@ public class App {
     private static final Scanner scanner = new Scanner(System.in);
     private static final MovieService service = new MovieServiceImpl();
 
-    // ── Popular Movies ────────────────────────────────────────────────────────
+//  Popular Movies
     private static void popularMovie() {
         int p = 1;
         sideMenu:
@@ -50,7 +50,7 @@ public class App {
         }
     }
 
-    // ── Top Rated Movies ──────────────────────────────────────────────────────
+//    Top Rated Movies
     private static void topRatedMovie() {
         int p = 1;
         sideMenu:
@@ -80,7 +80,7 @@ public class App {
         }
     }
 
-    // ── Now Playing Movies ────────────────────────────────────────────────────
+//  Playing Movies
     private static void nowPlayingMovie() {
         int p = 1;
         sideMenu:
@@ -110,7 +110,7 @@ public class App {
         }
     }
 
-    // ── Upcoming Movies ───────────────────────────────────────────────────────
+//    Upcoming Movies
     private static void upcomingMovie() {
         int p = 1;
         sideMenu:
@@ -140,7 +140,7 @@ public class App {
         }
     }
 
-    // ── Search Menu ───────────────────────────────────────────────────────────
+//    Search Menu
     private static void searchMenu() {
         System.out.print(cyan + "Enter Movie Name: ");
         String name = scanner.next();
@@ -173,7 +173,7 @@ public class App {
         }
     }
 
-    // ── Shared Helpers ────────────────────────────────────────────────────────
+//Shared Helpers
     private static int goToPage(int current, int totalPages) {
         while (true) {
             System.out.print(cyan + "[!] Enter page number: ");
@@ -195,10 +195,10 @@ public class App {
         TableRenderer.displayTableMovieInformation(movieInfo);
     }
 
-    // ── Main ──────────────────────────────────────────────────────────────────
+//  main
     public static void main(String[] args) {
         while (true) {
-            System.out.println(green + """
+            System.out.println(blue + """
                     ███╗   ███╗ ██████╗ ██╗   ██╗██╗███████╗    ███████╗███████╗ █████╗ ██████╗  ██████╗██╗  ██╗
                     ████╗ ████║██╔═══██╗██║   ██║██║██╔════╝    ██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝██║  ██║
                     ██╔████╔██║██║   ██║██║   ██║██║█████╗      ███████╗█████╗  ███████║██████╔╝██║     ███████║

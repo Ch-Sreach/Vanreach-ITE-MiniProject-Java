@@ -21,7 +21,6 @@ public class TableRenderer {
     public static final String cyan   = "\u001B[36m";
     public static final String reset  = "\u001B[0m";
 
-    // ── Movie List Table ──────────────────────────────────────────────────────
     public static void displayTableMovie(MovieResponse response) {
         if (response == null || response.getResults() == null) {
             System.out.println(yellow + "No movies found to display." + reset);
@@ -61,7 +60,7 @@ public class TableRenderer {
         System.out.println(green + "Total Results: " + response.getTotalResults() + reset);
     }
 
-    // ── Movie Detail Table ────────────────────────────────────────────────────
+
     public static void displayTableMovieInformation(MovieInfo info) {
         if (info == null) {
             System.out.println(yellow + "No movie information found." + reset);

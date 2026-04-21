@@ -24,7 +24,7 @@ public class MovieServiceImpl implements MovieService {
     private static final String API_KEY = "a2bd55a84889f3be6f199cf8725455e2";
     private static final String TOKEN   = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhMmJkNTVhODQ4ODlmM2JlNmYxOTljZjg3MjU0NTVlMiIsIm5iZiI6MTc3NjY3NDM5NC4zNzQsInN1YiI6IjY5ZTVlNjVhZmE1N2NjMTUxYzA2NDFiNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.GWXxGBiwBz4H--g_fT6hta_pmyEjDxn1jkit6LFrXSk";
 
-    // ── Helper to build a standard authenticated GET request ──────────────────
+
     private HttpRequest buildRequest(String url) {
         return HttpRequest.newBuilder()
                 .uri(URI.create(url))
@@ -34,7 +34,7 @@ public class MovieServiceImpl implements MovieService {
                 .build();
     }
 
-    // ── Helper to send a request and deserialize to MovieResponse ─────────────
+
     private MovieResponse fetchMovieResponse(String url) {
         try {
             HttpResponse<String> response = client.send(
@@ -45,7 +45,6 @@ public class MovieServiceImpl implements MovieService {
         }
     }
 
-    // ── Trailer ───────────────────────────────────────────────────────────────
     @Override
     public String getTrailer(int id) {
         String url = String.format(
@@ -76,7 +75,7 @@ public class MovieServiceImpl implements MovieService {
         return null;
     }
 
-    // ── Search ────────────────────────────────────────────────────────────────
+//  search
     @Override
     public MovieResponse getDummyMovie(String movieName, int page) {
         String url = String.format(
@@ -85,7 +84,7 @@ public class MovieServiceImpl implements MovieService {
         return fetchMovieResponse(url);
     }
 
-    // ── Movie Detail ──────────────────────────────────────────────────────────
+//  movie detail
     @Override
     public MovieInfo getMovieDetail(int id) {
         String url = String.format(
@@ -99,7 +98,7 @@ public class MovieServiceImpl implements MovieService {
         }
     }
 
-    // ── Popular ───────────────────────────────────────────────────────────────
+// popular
     @Override
     public MovieResponse getPopularMovie(int page) {
         String url = String.format(
@@ -107,7 +106,7 @@ public class MovieServiceImpl implements MovieService {
         return fetchMovieResponse(url);
     }
 
-    // ── Top Rated ─────────────────────────────────────────────────────────────
+//  top rating
     @Override
     public MovieResponse getTopRatedMovie(int page) {
         String url = String.format(
@@ -115,7 +114,7 @@ public class MovieServiceImpl implements MovieService {
         return fetchMovieResponse(url);
     }
 
-    // ── Upcoming ──────────────────────────────────────────────────────────────
+//  upcoming
     @Override
     public MovieResponse getUpcoming(int page) {
         String url = String.format(
@@ -123,7 +122,7 @@ public class MovieServiceImpl implements MovieService {
         return fetchMovieResponse(url);
     }
 
-    // ── Now Playing ───────────────────────────────────────────────────────────
+// playing
     @Override
     public MovieResponse getNowPlaying(int page) {
         String url = String.format(
