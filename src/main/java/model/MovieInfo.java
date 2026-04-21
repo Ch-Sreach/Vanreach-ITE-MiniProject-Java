@@ -7,24 +7,26 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 
-public class Movie {
-    private Integer id;
-
-    @JsonProperty("original_title")
-    private String originalTitle;
+public class MovieInfo {
+    private String title;
 
     @JsonProperty("release_date")
     private String releaseDate;
 
     @JsonProperty("vote_average")
     private Double voteAverage;
-//    private Integer id;
-//    private String title;
-//    private LocalDate release;
-//    private Double rate;
-//    private String trailer;
+
+    private Integer runtime;
+
+    @JsonProperty("budget")
+    private Double budget;
+
+    private Genres[] genres;
+
+    @JsonProperty("origin_country")
+    private String[] originalCountry;
 }
